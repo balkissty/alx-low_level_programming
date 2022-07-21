@@ -1,13 +1,18 @@
 #include "main.h"
 
 /**
- * get_endianness - checks if a machine is little or big endian
- * Return: 0 for big, 1 for little
- */
+ * get_endianness - checks if multibyte data is the endianess
+ * Return: 1 if little endian, 0 if big-endian
+*/
+
 int get_endianness(void)
 {
-	unsigned int i = 1;
-	char *c = (char *) &i;
+	int x = 1;
+	char *endian = (char *)&x;
 
-	return (*c);
+	if (*endian == 1)
+	{
+		return (1);
+	}
+	return (0);
 }
